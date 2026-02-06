@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="container">
+        <!-- Counter and State Controls -->
+        <div id="counter-section">
+            <div>Counter: <span id="counterDisplay">0</span></div>
+            <div>State (True/False): <span id="stateDisplay">False</span></div>
+        </div>
+
+        <!-- Main Controls -->
+        <div id="control-section">
+            <label for="amountInput">Amount:</label>
+            <input id="amountInput" type="number" value="1" />
+            <div>
+                <button id="incrementBtn">Increment (P)</button>
+                <button id="decrementBtn">Decrement (M)</button>
+            </div>
+            <div>
+                <button id="toggleBtn">Toggle State</button>
+                <button id="resetBtn">Reset</button>
+                <button id="enableBtn" disabled>Enable Interaction</button>
+            </div>
+        </div>
+
+        <!-- Temperature Converter -->
+        <div id="converter-section">
+            <h3>Temperature Converter</h3>
+            <input type="text" id="tempInput" placeholder="Enter temperature" />
+            <select id="conversionType">
+                <option value="f2c">Fahrenheit to Celsius</option>
+                <option value="c2f">Celsius to Fahrenheit</option>
+            </select>
+            <button id="convertBtn">Convert</button>
+            <div id="conversionResult" style="margin-top:10px; font-weight:bold;"></div>
+        </div>
+    </div>
+
+    <script src="code_final.js"></script>
+</body>
+</html>

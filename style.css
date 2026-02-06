@@ -1,0 +1,52 @@
+/* Container styling */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+/* Sections styling */
+#counter-section,
+#control-section,
+#converter-section {
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+/* Display styles */
+#counterDisplay {
+    font-size: 36px;
+    margin: 10px;
+}
+
+#stateDisplay {
+    font-size: 24px;
+    margin: 10px;
+}
+
+/* Buttons styling */
+button {
+    font-size: 20px;
+    padding: 8px 12px;
+    margin: 5px;
+    transition: background-color 0.2s ease;
+}
+
+/* Inputs and select styling */
+input[type=number],
+input[type=text] {
+    width: 80px;
+    font-size: 24px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+select {
+    font-size: 16px;
+    margin-left: 10px;
+}
