@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Very small, single-entry launcher.
+# Edit the ENTRY variable below to change which workspace file this runs.
+# This script accepts no arguments or options — it only runs the hard-coded entry.
+
+set -euo pipefail
+
+# Absolute path to the single workspace script to execute.
+# Edit this line to point to the file you want `run` to always execute.
+ENTRY="/workspaces/code-site/slot.py"
+
+# Do not accept any arguments — keep behavior simple.
+if [ "$#" -ne 0 ]; then
+  echo "This 'run' only executes the configured workspace. Remove arguments." >&2
+  exit 2
+fi
+
+if [ ! -f "$ENTRY" ]; then
+  echo "Configured entry not found: $ENTRY" >&2
+  exit 3
+fi
+
+# If the file is executable with a shebang, run it directly.
+if head -n1 "$ENTRY" | grep -q '^#!'; then
+  exec "$ENTRY"
+fi
+
+# Otherwise run with python3.
+if command -v python3 >/dev/null 2>&1; then
+  exec python3 "$ENTRY"
+else
+  echo "python3 not found in PATH" >&2
+  exit 4
+fi
